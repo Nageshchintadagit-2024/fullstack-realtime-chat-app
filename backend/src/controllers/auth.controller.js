@@ -131,13 +131,3 @@ export const checkAuth = (req,res) => {
 }
 
 
-export const getUsers = async(req,res) => {
-   try{
-    const usersDetails = await User.find()
-    res.status(200).json({users:usersDetails})
-   }
-   catch(error){
-    console.log('error in get users controller', error)
-    res.status(500).json({message:'Internal Server error'})
-   }
-}
